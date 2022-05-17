@@ -1,0 +1,64 @@
+#header{
+    margin-top: 100px;
+    background: linear-gradient(to right, white, #60FAFF);
+    color: azure;
+    
+    
+}
+
+
+#contenedorT {
+    margin-right: 300px;
+    margin-left: 300px;
+    display: flex;
+ justify-content: center;
+}
+
+#miGrafica {
+    margin-top: 90px;
+    margin-right: 300px;
+    margin-left: 80px;
+}
+
+#tbDatos{
+    margin-top: 100px;
+    margin-right: 100px;
+    margin-left: 300px;
+    height: auto;
+    white-space: nowrap;
+    
+}
+
+a{
+    margin-left: 360px;
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+  
+}
+
+
+.inicio {
+    margin-left: 190px;
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+  
+}
+
+img{
+    display: block;
+    margin: 0px auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+   }
+   
+footer{
+    margin-top: 90px;
+    text-align: center;
+    color: rgb(31, 32, 32);
+    background: linear-gradient(to right, white, #60FAFF);
+
+}
+
+
