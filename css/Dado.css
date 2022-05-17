@@ -1,0 +1,13 @@
+.div_calcular
+{
+	background: linear-gradient(to right, white, #60FAFF);
+	position: relative;
+    left: 25%;
+    width: 50%;
+    height: auto;
+    top: 5px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 7, 0.8);
+    border-radius: 10px;
+    text-align: left;
+    font-size: 17px;
+}
