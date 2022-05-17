@@ -13,9 +13,11 @@ document.getElementById('btn_calcular').addEventListener('click',e =>{
       }
     })
     p.then(res =>{
+      cf.getapi(valoractual);
       //console.log('PROMESA OK en addEventListener');      
     })
     .catch(err =>{
+      //alert('CAMPO LANZAMIENTOS ESTÁ VACIO');
       //console.log('PROMESA no OK en addEventListener');
     });
     
@@ -76,26 +78,12 @@ function ValidarNumerosDado(_Vector){
                   } 
                     else{console.log("NÚMERO NO EXISTE DENTRO DEL ARREGLO");} 
   }
-
-//SE PARAMETRIZA Y CREA GRÁFICA DE BARRAS CON LA FRECUENCIA
-  var _ctx = document.getElementById("mychart").getContext("2d");
-  var mychart = new Chart(_ctx,{
-  type:"bar",
-  data:{
-    labels:['#1','#2','#3','#4','#5','#6'],
-    datasets:[{
-      label:'FRECUENCIA CON QUE SE REPITE UN NÚMERO ',
-      data:[_contar1, _contar2, _contar3, _contar4, _contar5, _contar6]
-        }]
-    }
-});
-
-      console.log("FRECUENCIA NÚMERO (1) ESTÁ: " + _contar1 + " VECES");
-      console.log("FRECUENCIA NÚMERO (2) ESTÁ: " + _contar2 + " VECES");
-      console.log("FRECUENCIA NÚMERO (3) ESTÁ: " + _contar3 + " VECES");     
-      console.log("FRECUENCIA NÚMERO (4) ESTÁ: " + _contar4 + " VECES");
-      console.log("FRECUENCIA NÚMERO (5) ESTÁ: " + _contar5 + " VECES");
-      console.log("FRECUENCIA NÚMERO (6) ESTÁ: " + _contar6 + " VECES");
+      console.log("EL NÚMERO (1) ESTÁ: " + _contar1 + " VECES");
+      console.log("EL NÚMERO (2) ESTÁ: " + _contar2 + " VECES");
+      console.log("EL NÚMERO (3) ESTÁ: " + _contar3 + " VECES");     
+      console.log("EL NÚMERO (4) ESTÁ: " + _contar4 + " VECES");
+      console.log("EL NÚMERO (5) ESTÁ: " + _contar5 + " VECES");
+      console.log("EL NÚMERO (6) ESTÁ: " + _contar6 + " VECES");
       console.log("*************** FIN EJECUCIÓN ValidarNumerosDado ***************");
       FrecuenciaRelativa(_contar1,_contar2,_contar3,_contar4,_contar5,_contar6,_Vector.length);
 }
@@ -105,12 +93,12 @@ function ValidarNumerosDado(_Vector){
 function FrecuenciaRelativa(_FR1, _FR2, _FR3, _FR4, _FR5, _FR6,_TamV){
   console.log("\n*************** INICIO EJECUCIÓN FrecuenciaRelativa ***************");
   var _FR1S1 =_FR1/_TamV, _FR2S2 = _FR2/_TamV, _FR3S3 = _FR3/_TamV, _FR4S4 = _FR4/_TamV, _FR5S5 = _FR5/_TamV, _FR6S6 = _FR6/_TamV;
-  console.log("FRECUENCIA RELATIVA (1): " + _FR1S1);
-  console.log("FRECUENCIA RELATIVA (2): " + _FR2S2);  
-  console.log("FRECUENCIA RELATIVA (3): " + _FR3S3);
-  console.log("FRECUENCIA RELATIVA (4): " + _FR4S4);
-  console.log("FRECUENCIA RELATIVA (5): " + _FR5S5);
-  console.log("FRECUENCIA RELATIVA (6): " + _FR6S6);  
+  console.log("CARA DEL DADO (1): " + _FR1S1);
+  console.log("CARA DEL DADO (2): " + _FR2S2);  
+  console.log("CARA DEL DADO (3): " + _FR3S3);
+  console.log("CARA DEL DADO (4): " + _FR4S4);
+  console.log("CARA DEL DADO (5): " + _FR5S5);
+  console.log("CARA DEL DADO (6): " + _FR6S6);  
   console.log("*************** FIN EJECUCIÓN FrecuenciaRelativa ***************");
   FrecuenciaAbsoluta(_FR1S1, _FR2S2, _FR3S3, _FR4S4, _FR5S5, _FR6S6);
 }
