@@ -91,27 +91,28 @@ function ValidarNumerosDado(_Vector){
 
 //FUNCIÓN PARA CALCULAR LA FRECUENCIA RELATIVA Y ABSOLUTA
 function FrecuenciaRelativa(_FR1, _FR2, _FR3, _FR4, _FR5, _FR6,_TamV){
-  var _FR1S1 =_FR1/_TamV, _FR2S2 = _FR2/_TamV, _FR3S3 = _FR3/_TamV, _FRS4 = _FR4/_TamV, _FRS5 = _FR5/_TamV, _FRS6 = _FR6/_TamV;
   console.log("\n*************** INICIO EJECUCIÓN FrecuenciaRelativa ***************");
+  var _FR1S1 =_FR1/_TamV, _FR2S2 = _FR2/_TamV, _FR3S3 = _FR3/_TamV, _FR4S4 = _FR4/_TamV, _FR5S5 = _FR5/_TamV, _FR6S6 = _FR6/_TamV;
   console.log("CARA DEL DADO (1): " + _FR1S1);
   console.log("CARA DEL DADO (2): " + _FR2S2);  
   console.log("CARA DEL DADO (3): " + _FR3S3);
-  console.log("CARA DEL DADO (4): " + _FRS4);
-  console.log("CARA DEL DADO (5): " + _FRS5);
-  console.log("CARA DEL DADO (6): " + _FRS6);  
+  console.log("CARA DEL DADO (4): " + _FR4S4);
+  console.log("CARA DEL DADO (5): " + _FR5S5);
+  console.log("CARA DEL DADO (6): " + _FR6S6);  
   console.log("*************** FIN EJECUCIÓN FrecuenciaRelativa ***************");
+  FrecuenciaAbsoluta(_FR1S1, _FR2S2, _FR3S3, _FR4S4, _FR5S5, _FR6S6);
 }
 
 
-
 //FUNCIÓN PARA CALCULAR LA FRECUENCIA ABSOLUTA
-function FrecuenciaAbsoluta(_F1, _F2, _F3, _F4, _F5, _F6){
+function FrecuenciaAbsoluta(_FR1S1, _FR2S2, _FR3S3, _FR4S4, _FR5S5, _FR6S6){
   console.log("\n*************** INICIO EJECUCIÓN FrecuenciaAbsoluta ***************");
-  console.log("CARA DEL DADO (1): " + _F1/_TamV);
-  console.log("CARA DEL DADO (2): " +_F2/_TamV);  
-  console.log("CARA DEL DADO (3): " +_F3/_TamV);
-  console.log("CARA DEL DADO (4): " +_F4/_TamV);
-  console.log("CARA DEL DADO (5): " +_F5/_TamV);
-  console.log("CARA DEL DADO (6): " +_F6/_TamV);  
+  var _FA1 = _FR1S1, _FA2 = _FA1 + _FR2S2, _FA3 = _FA2 + _FR3S3, _FA4 = _FA3 + _FR4S4, _FA5 = _FA4 + _FR5S5, _FA6 = _FA5 + _FR6S6;
+  console.log("FRECUENCIA ABSOLUTA (1): " + _FA1);
+  console.log("FRECUENCIA ABSOLUTA (2): " + _FA2);  
+  console.log("FRECUENCIA ABSOLUTA (3): " + _FA3);
+  console.log("FRECUENCIA ABSOLUTA (4): " + _FA4);
+  console.log("FRECUENCIA ABSOLUTA (5): " + _FA5);
+  console.log("FRECUENCIA ABSOLUTA (6): " + Math.ceil(_FA6));  
   console.log("*************** FIN EJECUCIÓN FrecuenciaAbsoluta ***************");
 }
