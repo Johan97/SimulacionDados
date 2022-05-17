@@ -1,13 +1,129 @@
 .div_calcular
 {
 	background: linear-gradient(to right, white, #60FAFF);
-	position: relative;
+	position: absolute;
+    top: 0px;
     left: 25%;
     width: 50%;
-    height: auto;
-    top: 5px;
     box-shadow: 0 0 15px 0 rgba(0, 0, 7, 0.8);
-    border-radius: 10px;
-    text-align: left;
-    font-size: 17px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.div_grafica
+{
+    position: absolute;
+    top: 130px;
+    left: 15%;
+    width: 70%;
+    height: 75%;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.div_tabla
+{
+    position: absolute;
+    top: 680px;
+    left: 15%;
+    width: 70%;
+    height: 40%;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.div_autor
+{
+    position: absolute;
+    background: linear-gradient(to right, white, #60FAFF);
+    font-style: oblique;
+    top: 980px;
+    left: 15%;
+    width: 70%;
+    height: 17%;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 7, 0.8);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn{
+    font-family: 'roboto';
+    background: #484d61;
+    background: linear-gradient(to right, #60FAFF, #4568DC);
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+input{
+    background: none;
+    color: #c6c6c6;
+    font-size: 20px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 98%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);;
+}
+
+input:focus{ 
+    outline: none;
+    color: #5e5d5d;
+}
+
+label{
+    transition: 0.5s ease all;
+    pointer-events: none;
+    color: var(--colorTextos);
+    font-size: 16px;
+    left: 6px;
+    top: 10px;
+
+}
+
+
+.line{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.line::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #60FAFF, #4568DC);
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.line::before{
+    width: 100%;
+}
+
+body {
+    font-family: 'Roboto';
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --colorTextos: #49454567;
 }
