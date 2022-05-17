@@ -50,6 +50,7 @@ function ConsultarArreglo(_Vector){
 }
 
 
+
 //FUNCIÓN PARA VALIDAR REPETICIÓN DE UN NÚMERO DE N CARA DEL DADO
 function ValidarNumerosDado(_Vector){
   console.log("\n*************** INICIO EJECUCIÓN ValidarNumerosDado ***************");
@@ -89,7 +90,6 @@ function ValidarNumerosDado(_Vector){
         }]
     }
 });
-
       console.log("FRECUENCIA NÚMERO (1) ESTÁ: " + _contar1 + " VECES");
       console.log("FRECUENCIA NÚMERO (2) ESTÁ: " + _contar2 + " VECES");
       console.log("FRECUENCIA NÚMERO (3) ESTÁ: " + _contar3 + " VECES");     
@@ -97,11 +97,12 @@ function ValidarNumerosDado(_Vector){
       console.log("FRECUENCIA NÚMERO (5) ESTÁ: " + _contar5 + " VECES");
       console.log("FRECUENCIA NÚMERO (6) ESTÁ: " + _contar6 + " VECES");
       console.log("*************** FIN EJECUCIÓN ValidarNumerosDado ***************");
+      CrearTbl(_contar1,_contar2,_contar3,_contar4,_contar5,_contar6);//CREACIÓN TBL FRECUENCIA
       FrecuenciaRelativa(_contar1,_contar2,_contar3,_contar4,_contar5,_contar6,_Vector.length);
 }
 
 
-//FUNCIÓN PARA CALCULAR LA FRECUENCIA RELATIVA Y ABSOLUTA
+//FUNCIÓN PARA CALCULAR LA FRECUENCIA RELATIVA
 function FrecuenciaRelativa(_FR1, _FR2, _FR3, _FR4, _FR5, _FR6,_TamV){
   console.log("\n*************** INICIO EJECUCIÓN FrecuenciaRelativa ***************");
   var _FR1S1 =_FR1/_TamV, _FR2S2 = _FR2/_TamV, _FR3S3 = _FR3/_TamV, _FR4S4 = _FR4/_TamV, _FR5S5 = _FR5/_TamV, _FR6S6 = _FR6/_TamV;
@@ -117,7 +118,7 @@ function FrecuenciaRelativa(_FR1, _FR2, _FR3, _FR4, _FR5, _FR6,_TamV){
 
 
 //FUNCIÓN PARA CALCULAR LA FRECUENCIA ABSOLUTA
-function FrecuenciaAbsoluta(_FR1S1, _FR2S2, _FR3S3, _FR4S4, _FR5S5, _FR6S6){
+function FrecuenciaAbsoluta(_FR1S1, _FR2S2, _FR3S3, _FR4S4, _FR5S5, _FR6S6, _TamV){
   console.log("\n*************** INICIO EJECUCIÓN FrecuenciaAbsoluta ***************");
   var _FA1 = _FR1S1, _FA2 = _FA1 + _FR2S2, _FA3 = _FA2 + _FR3S3, _FA4 = _FA3 + _FR4S4, _FA5 = _FA4 + _FR5S5, _FA6 = _FA5 + _FR6S6;
   console.log("FRECUENCIA ABSOLUTA (1): " + _FA1);
@@ -127,4 +128,42 @@ function FrecuenciaAbsoluta(_FR1S1, _FR2S2, _FR3S3, _FR4S4, _FR5S5, _FR6S6){
   console.log("FRECUENCIA ABSOLUTA (5): " + _FA5);
   console.log("FRECUENCIA ABSOLUTA (6): " + Math.ceil(_FA6));  
   console.log("*************** FIN EJECUCIÓN FrecuenciaAbsoluta ***************");
+  CrearTbl(_FR1S1,_FR2S2,_FR3S3,_FR4S4,_FR5S5,_FR6S6);//CREACIÓN TBL FRECUENCIA RELATIVA
+  CrearTbl(_FA1,_FA2,_FA3,_FA4,_FA5,Math.ceil(_FA6));//CREACIÓN TBL FRECUENCIA ABSOLUTA
 }
+
+function CrearTbl(_F1,_F2,_F3,_F4,_F5,_F6){
+
+  var body = document.getElementsByTagName("body")[0];
+  var tabla = document.createElement("table");
+  var cuerpo = document.createElement("tbody");
+
+      for (var i = 1; i <= 6; i++) {
+          var fila = document.createElement("tr");
+          var celda = document.createElement("td");  
+          if (1==i) {
+              var textoCelda = document.createTextNode("NÚMERO " + i + " = " + _F1);  
+          }
+          if (2==i) {
+              var textoCelda = document.createTextNode("NÚMERO " + i + " = " + _F2);
+          }
+          if (3==i) {
+              var textoCelda = document.createTextNode("NÚMERO " + i + " = " + _F3);
+          }
+          if (4==i) {
+              var textoCelda = document.createTextNode("NÚMERO " + i + " = " + _F4);
+          }
+          if (5==i) {
+              var textoCelda = document.createTextNode("NÚMERO " + i + " = " + _F5);
+          }
+          if (6==i) {
+              var textoCelda = document.createTextNode("NÚMERO " + i + " = " + _F6);
+          }
+      celda.appendChild(textoCelda);
+      fila.appendChild(celda);
+      cuerpo.appendChild(fila);
+      tabla.appendChild(cuerpo);
+      body.appendChild(tabla);
+      tabla.setAttribute("border","2");
+      }
+  }
